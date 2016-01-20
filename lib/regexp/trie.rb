@@ -44,5 +44,9 @@ class Regexp
     def to_str
       _regexp(@trie)
     end
+
+    def to_regexp
+      Regexp.new(to_str)
+    end
   end
 end
