@@ -17,7 +17,7 @@ class Regexp
     end
 
     def _regexp(node)
-      return nil if node.has_key?('') and node.keys.size == 1
+      return nil if node.has_key?('') and node.size == 1
       alt = []
       cc = []
       q = false
