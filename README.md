@@ -17,7 +17,7 @@ This is a Ruby port of Perl's [Regexp::Trie](https://metacpan.org/pod/Regexp::Tr
     rt = Regexp::Trie.new
     rt.add('who')
     rt.add('where')
-    rt.add('when)
+    rt.add('when')
 
     rt.to_str       #=> "wh(?:e(?:re|n)|o)"
     rt.to_regexp    #=> /wh(?:e(?:re|n)|o)/
