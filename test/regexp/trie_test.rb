@@ -14,8 +14,8 @@ class Regexp::TrieTest < Minitest::Test
     assert_match re, 'where', "#{re} matches 'where'"
     assert_match re, 'when', "#{re} matches 'when'"
 
-    assert !(re =~ 'which'), "#{re} doesn't matche 'which'"
-    assert !(re =~ 'wh'), "#{re} doesn't matche 'wh'"
+    refute_match re, 'which', "#{re} doesn't matche 'which'"
+    refute_match re, 'wh', "#{re} doesn't matche 'wh'"
   end
 
   def test_exact_match
@@ -27,6 +27,6 @@ class Regexp::TrieTest < Minitest::Test
     assert_match re, 'ab',  "#{re} matches 'ab'"
     assert_match re, 'abc',  "#{re} matches 'abc'"
 
-    assert !(re =~ 'abz'), "#{re} doesn't matche 'abz'"
+    refute_match re, 'abz', "#{re} doesn't matche 'abz'"
   end
 end
