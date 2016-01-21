@@ -12,12 +12,12 @@ class Regexp
         ref[c] ||= {}
         ref = ref[c]
       end
-      ref[:end] = true
+      ref[''] = nil
       self
     end
 
     def _regexp(node)
-      return nil if node[:end]
+      return nil if node.has_key?('') and node.keys.size == 1
       alt = []
       cc = []
       q = false

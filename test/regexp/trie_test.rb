@@ -17,4 +17,16 @@ class Regexp::TrieTest < Minitest::Test
     assert !(re =~ 'which'), "#{re} doesn't matche 'which'"
     assert !(re =~ 'wh'), "#{re} doesn't matche 'wh'"
   end
+
+  def test_exact_match
+    str = %w(ab abc).
+          reduce(Regexp::Trie.new) {|r, v| r.add(v) }.
+          to_str
+    re = Regexp.new('\A' + str + '\z')
+
+    assert_match re, 'ab',  "#{re} matches 'ab'"
+    assert_match re, 'abc',  "#{re} matches 'abc'"
+
+    assert !(re =~ 'abz'), "#{re} doesn't matche 'abz'"
+  end
 end
