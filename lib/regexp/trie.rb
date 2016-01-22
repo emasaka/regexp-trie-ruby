@@ -50,3 +50,11 @@ class Regexp                    # :nodoc:
     end
   end
 end
+
+module RegexpTrieExtensions
+  refine Array do
+    def to_regexp_trie
+      reduce(Regexp::Trie.new) {|r, v| r.add(v) }
+    end
+  end
+end

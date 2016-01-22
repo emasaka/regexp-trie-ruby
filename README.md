@@ -22,6 +22,15 @@ This is a Ruby port of Perl's [Regexp::Trie](https://metacpan.org/pod/Regexp::Tr
     rt.to_str       #=> "wh(?:e(?:re|n)|o)"
     rt.to_regexp    #=> /wh(?:e(?:re|n)|o)/
 
+or
+
+    require 'regexp/trie'
+
+    using RegexpTrieExtensions
+
+    rt = ['who', 'where', 'when'].to_regexp_trie
+    rt.to_regexp    #=> /wh(?:e(?:re|n)|o)/
+
 ## Installation
 
 Add this line to your application's Gemfile:

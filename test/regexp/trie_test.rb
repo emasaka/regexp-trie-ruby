@@ -29,4 +29,13 @@ class Regexp::TrieTest < Minitest::Test
 
     refute_match re, 'abz', "#{re} doesn't matche 'abz'"
   end
+
+  using RegexpTrieExtensions
+
+  def test_refinements
+    re = %w(ab ac).to_regexp_trie.to_regexp
+
+    assert_match re, 'ab',  "#{re} matches 'ab'"
+    assert_match re, 'ac',  "#{re} matches 'ac'"
+  end
 end
