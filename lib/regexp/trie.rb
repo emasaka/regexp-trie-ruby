@@ -1,4 +1,4 @@
-class Regexp
+class Regexp                    # :nodoc:
   class Trie
     VERSION = "0.1.0"
 
@@ -16,7 +16,7 @@ class Regexp
       self
     end
 
-    def _regexp(node)
+    def _regexp(node)           # :nodoc:
       return nil if node.has_key?('') and node.size == 1
       alt = []
       cc = []
