@@ -2,6 +2,8 @@
 
 Builds trie-ized regexp.
 
+*This project is not maintained.  Use [gfx/regexp_trie](https://github.com/gfx/ruby-regexp_trie) instead.*
+
 ## Description
 
 Regexp::Trie takes many strings expressions and assembles them into a single regular expression that matches all that the individual REs match.
@@ -21,22 +23,6 @@ This is a Ruby port of Perl's [Regexp::Trie](https://metacpan.org/pod/Regexp::Tr
 
     rt.to_str       #=> "wh(?:e(?:re|n)|o)"
     rt.to_regexp    #=> /wh(?:e(?:re|n)|o)/
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'regexp-trie'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install regexp-trie
 
 ## Author
 
